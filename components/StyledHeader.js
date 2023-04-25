@@ -7,8 +7,14 @@ export const Header = styled.header`
   justify-content: center;
   text-align: center;
   padding: 10px 15px;
-  background: blue;
+  background: yellow;
   width: 100%;
-  height: 7rem;
-  font-size: 1.5em;
-`;
+  height: 10rem;
+  font-size: 2em;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  bottom: 0;
+  z-index: -1;
+  height: 85%;
+}
+// `;
