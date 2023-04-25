@@ -5,8 +5,8 @@ export const Header = styled.header`
   top: 0rem;
   display: flex;
   justify-content: center;
-  text-align: center;
-  padding: 10px 15px;
+  align-items: top;
+  padding: 20px 30px;
   background: yellow;
   width: 100%;
   height: 10rem;

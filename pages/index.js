@@ -21,17 +21,13 @@ export default function HomePage() {
       <h2 className="actions">
         {activities.map((activity) => {
           return (
-            <>
-              <StyleBox>
-                <div>
-                  <StyleList>
-                    <li key={activity.id}>
-                      <p>{activity.name}</p>
-                    </li>
-                  </StyleList>
-                </div>
-              </StyleBox>
-            </>
+            <StyleBox key={activity.id}>
+              <StyleList>
+                <li>
+                  <p>{activity.name}</p>
+                </li>
+              </StyleList>
+            </StyleBox>
           );
         })}
       </h2>
