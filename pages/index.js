@@ -1,9 +1,9 @@
-import { activities } from "@/db/users/activities/activities";
-// import Link from "next/link";
 import styled from "styled-components";
 import { Header } from "@/components/StyledHeader";
 import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
+import { activities } from "@/db/users/activities/activities";
+// import Link from "next/link";
 
 const StyleMain = styled.main`
   margin-top: 7rem;
