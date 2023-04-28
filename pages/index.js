@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Header } from "@/components/StyledHeader";
 import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
-import { activities } from "@/db/users/activities/activities";
+import { activities } from "@/lib/users/activities/activities";
 // import Link from "next/link";
 
 const StyleMain = styled.main`
@@ -11,7 +11,6 @@ const StyleMain = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-color: green;
 `;
 
 export default function HomePage() {
