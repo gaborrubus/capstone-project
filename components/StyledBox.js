@@ -1,12 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const StyleBox = styled.div`
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  border: solid purple;
+  border: solid black;
   border-radius: 25px;
-  width: 100%;
-
+  margin-top: 1rem;
+  margin-left: 1rem;
 `;

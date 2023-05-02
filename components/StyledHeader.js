@@ -5,19 +5,16 @@ export const Header = styled.header`
   top: 0rem;
   display: flex;
   justify-content: center;
-
-  align-items: center;
+  align-items: top;
   padding: 20px 30px;
-  background-image: linear-gradient(yellow, orange);
+  background: yellow;
   width: 100%;
-  height: 5rem;
-
-
+  height: 10rem;
   font-size: 2em;
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
   bottom: 0;
   z-index: -1;
   height: 85%;
-
-`;
+}
+// `;
