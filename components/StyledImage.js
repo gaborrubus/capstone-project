@@ -7,4 +7,5 @@ export const StyledImage = styled(Image)`
   height: 300px;
   margin-top: 1rem;
   margin-right: 3rem;
+  border-radius: 0.8rem;
 `;

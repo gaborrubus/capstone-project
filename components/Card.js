@@ -1,13 +1,14 @@
-// import Link from "next/link.js";
+import Link from "next/link.js";
 import styled from "styled-components";
 import { StyledImage } from "./StyledImage.js";
 import { Box } from "./StyledSmallBox.js";
+
 const Article = styled.article`
-  border: 5px solid black;
+  border: 3px solid purple;
   border-radius: 0.8rem;
   padding: 1rem;
   margin: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
 `;
 
 const ImageContainer = styled.div`
@@ -15,11 +16,12 @@ const ImageContainer = styled.div`
   height: 10rem;
   width: screen;
   margin: 0rem;
-  padding: 0.5rem;
+  padding: 1rem;
 `;
 
 const Figure = styled.figure`
   position: relative;
+  width: 100%;
   margin: 0rem;
   padding: 0.5rem;
 `;
@@ -49,12 +51,8 @@ export default function Card({
         <p>{name}</p>
       </Figure>
       <Box>{points}</Box>
+
       <p>{description}</p>
-      {/* <Link
-        href={`lib/users/activities/activities/${id}`}
-        passHref
-        legacyBehavior
-      ></Link> */}
     </Article>
   );
 }

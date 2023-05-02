@@ -3,7 +3,7 @@ import { Header } from "@/components/StyledHeader";
 import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
 import { activities } from "@/lib/users/activities/activities";
-// import Link from "next/link";
+import Link from "next/link";
 
 const StyleMain = styled.main`
   margin-top: 7rem;
@@ -23,7 +23,9 @@ export default function HomePage() {
             <StyleBox key={activity.id}>
               <StyleList>
                 <li>
-                  <p>{activity.name}</p>
+                  <Link href={`/activities/${activity.id}`}>
+                    {activity.name}
+                  </Link>
                 </li>
               </StyleList>
             </StyleBox>

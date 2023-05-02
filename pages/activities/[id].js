@@ -3,11 +3,7 @@ import { Header } from "@/components/StyledHeader";
 import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
 import { activities } from "@/lib/users/activities/activities";
-import { StyledImage } from "@/components/StyledImage";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { SWRConfig } from "swr";
-import { useState } from "react";
 import Card from "@/components/Card";
 
 const StyleDetailMain = styled.main`
@@ -16,11 +12,6 @@ const StyleDetailMain = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  height: 15rem;
 `;
 
 export default function DetailedPage() {
@@ -54,12 +45,4 @@ export default function DetailedPage() {
       </h2>
     </StyleDetailMain>
   );
-}
-
-{
-  /* <p>{activity.name}</p>
-<ImageContainer>
-  <StyledImage src={activities.image} alt="" />
-</ImageContainer>
-<p>{activity.description}</p> */
 }

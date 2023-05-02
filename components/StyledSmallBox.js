@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  float: top-right;
-  height: 50px;
-  width: 100px;
-  margin-bottom: 15px;
-  border: 1px solid black;
-  clear: both;
-  background-color: yellow;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(yellow, orange);
 `;
