@@ -1,4 +1,6 @@
+
 import { activities } from "@/lib/users/activities/activities";
+
 import styled from "styled-components";
 import Link from "next/link";
 
