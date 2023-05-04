@@ -9,6 +9,7 @@ const Article = styled.article`
   padding: 1rem;
   margin: 1rem;
   padding: 1rem;
+  width: screen;
 `;
 
 const ImageContainer = styled.div`
@@ -21,7 +22,7 @@ const ImageContainer = styled.div`
 
 const Figure = styled.figure`
   position: relative;
-  width: 100%;
+  width: screen;
   margin: 0rem;
   padding: 0.5rem;
 `;
@@ -50,7 +51,7 @@ export default function Card({
         </ImageContainer>
         <p>{name}</p>
       </Figure>
-      <Box>{points}</Box>
+      <Box>{points}points</Box>
 
       <p>{description}</p>
     </Article>
