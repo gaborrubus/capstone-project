@@ -1,0 +1,92 @@
+import styled from "styled-components";
+import { StyledButton } from "./StyledButton.js";
+import { Header } from "./StyledHeader.js";
+
+const FormContainer = styled.form`
+  display: grid;
+  gap: 0.5rem;
+  background-color: beige;
+`;
+
+const Input = styled.input`
+  padding: 0.5rem;
+  font-size: inherit;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+`;
+
+const Textarea = styled.textarea`
+  font-family: inherit;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+`;
+
+const Label = styled.label`
+  font-weight: bold;
+  background-color: beige;
+`;
+
+export default function Form({ onSubmit, defaultData }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    onSubmit(data);
+  }
+
+  return (
+    <FormContainer onSubmit={handleSubmit}>
+      <Header></Header>
+      <h2>Add Activity</h2>
+      <Label htmlFor="taskNumber">Activity number</Label>
+      <Input
+        id="taskNumber"
+        name="taskNumber"
+        type="text"
+        placeholder="0"
+        defaultValue={defaultData?.taskNumber}
+        required
+      />
+      <Label htmlFor="image-url">Image Url</Label>
+      <Input
+        id="image-url"
+        name="image"
+        type="image-url"
+        placeholder="https://images.unsplash.com/photo-1508004680771-708b02aabdc0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        defaultValue={defaultData?.image}
+        required
+      />
+
+      <Label htmlFor="formName">Activity name</Label>
+      <Input
+        id="name"
+        name="name"
+        placeholder="Enter activity name"
+        type="text"
+        defaultValue={defaultData?.name}
+        required
+      />
+      <Label htmlFor="points">Activity points</Label>
+      <Input
+        id="points"
+        name="points"
+        type="text"
+        placeholder="0 points"
+        defaultValue={defaultData?.points}
+        required
+      />
+      <Label htmlFor="description">Activity description</Label>
+      <Textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+        placeholder="Enter activity description"
+        defaultValue={defaultData?.description}
+        required
+      ></Textarea>
+      <StyledButton type="submit">Add activity</StyledButton>
+    </FormContainer>
+  );
+}

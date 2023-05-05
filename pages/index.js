@@ -2,42 +2,39 @@ import styled from "styled-components";
 import { Header } from "@/components/StyledHeader";
 import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
-
-import { activities } from "@/lib/users/activities/activities";
+import { StyledLink } from "@/components/StyledLink";
 import Link from "next/link";
 
-
 const StyleMain = styled.main`
-  margin-top: 7rem;
   background-color: beige;
-  display: flex;
   justify-content: center;
   align-items: center;
-
-
 `;
 
-export default function HomePage() {
+const FixedLink = styled(StyledLink)`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-image: linear-gradient(yellow, orange);
+`;
+
+export default function HomePage({ activities }) {
   return (
     <StyleMain>
       <Header>Adventure list</Header>
-      <h2 className="actions">
-        {activities.map((activity) => {
-          return (
-            <StyleBox key={activity.id}>
-              <StyleList>
-                <li>
 
-                  <Link href={`/activities/${activity.id}`}>
-                    {activity.name}
-                  </Link>
-
-                </li>
-              </StyleList>
+      {activities.map((activity) => {
+        return (
+          <StyleList key={activity.id}>
+            <StyleBox>
+              <li>
+                <Link href={`/activities/${activity.id}`}>{activity.name}</Link>
+              </li>
+              <FixedLink href="/create">Add</FixedLink>
             </StyleBox>
-          );
-        })}
-      </h2>
+          </StyleList>
+        );
+      })}
     </StyleMain>
   );
 }
