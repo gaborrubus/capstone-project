@@ -10,7 +10,13 @@ export default function App({ Component, pageProps }) {
 
   function handleAddActivity(newActivity) {
     setActivity([...activity, { ...newActivity, id: uid() }]);
-    console.log(setActivity);
+
+    router.push("/");
+  }
+
+  function handleDeleteActivity(idToRemove) {
+    setActivity(activities.filter((activity) => activity.id !== idToRemove));
+    console.log(handleDeleteActivity);
     router.push("/");
   }
 
@@ -20,6 +26,7 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         handleAddActivity={handleAddActivity}
+        handleDeleteActivity={handleDeleteActivity}
         activities={activity}
       />
     </>
