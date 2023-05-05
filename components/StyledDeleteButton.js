@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DelButton = styled.div`
+export const DeleteButton = styled.div`
   margin: auto;
   width: 50%;
   text-align: center;

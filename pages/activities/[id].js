@@ -4,7 +4,7 @@ import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
 import { useRouter } from "next/router";
 import Card from "@/components/Card";
-import { DelButton } from "@/components/StyledDELButton";
+import { DeleteButton } from "@/components/StyledDeleteButton";
 
 const StyleDetailMain = styled.main`
   background-color: beige;
@@ -38,9 +38,9 @@ export default function DetailedPage({ activities, handleDeleteActivity }) {
             />
           </li>
         </StyleBox>
-        <DelButton type="button" onClick={() => handleDeleteActivity(id)}>
+        <DeleteButton type="button" onClick={() => handleDeleteActivity(id)}>
           Delete
-        </DelButton>
+        </DeleteButton>
       </StyleList>
     </StyleDetailMain>
   );
