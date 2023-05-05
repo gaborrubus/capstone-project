@@ -4,6 +4,7 @@ import { StyleBox } from "@/components/StyledBox";
 import { StyleList } from "@/components/StyledList";
 import { useRouter } from "next/router";
 import Card from "@/components/Card";
+import { DeleteButton } from "@/components/StyledDeleteButton";
 
 const StyleDetailMain = styled.main`
   background-color: beige;
@@ -11,7 +12,7 @@ const StyleDetailMain = styled.main`
   align-items: center;
 `;
 
-export default function DetailedPage({ activities }) {
+export default function DetailedPage({ activities, handleDeleteActivity }) {
   const router = useRouter();
   const id = router.query.id;
 
@@ -37,6 +38,9 @@ export default function DetailedPage({ activities }) {
             />
           </li>
         </StyleBox>
+        <DeleteButton type="button" onClick={() => handleDeleteActivity(id)}>
+          Delete
+        </DeleteButton>
       </StyleList>
     </StyleDetailMain>
   );

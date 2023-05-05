@@ -18,7 +18,7 @@ const FixedLink = styled(StyledLink)`
   background-image: linear-gradient(yellow, orange);
 `;
 
-export default function HomePage({ activities }) {
+export default function HomePage({ activities, handleDeleteActivity }) {
   return (
     <StyleMain>
       <Header>Adventure list</Header>
