@@ -3,10 +3,12 @@ import { Header } from "@/components/StyledHeader.js";
 import FormActivityForEdit from "@/components/FormEdit.js";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { activities } from "@/lib/users/activities/activities";
 
 export default function EditActionItemPage({ handleEditActivity }) {
   const router = useRouter();
   const { id } = router.query;
+
   useEffect(() => {
     if (id) {
       handleEditActivity(id);
@@ -17,7 +19,9 @@ export default function EditActionItemPage({ handleEditActivity }) {
     <>
       <Header>Edit Adventure</Header>
       <StyleList />
-      <FormActivityForEdit onSubmit={handleEditActivity} id={id} />
+      <FormActivityForEdit
+        onSubmit={(editedActivity) => handleEditActivity(id)}
+      />
     </>
   );
 }

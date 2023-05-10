@@ -20,32 +20,28 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleEditActivity(id) {
-    console.log("editedActivity:", id);
-    //   const { id, name, points, description } = editedActivity;
-    //   console.log(name);
-    //   const foundActivity = activity.find((activity) => activity.id === id);
-    //   if (!foundActivity) {
-    //     console.log(`Activity with  ${id} not found`);
-    //     return;
-    //   }
-    //   console.log(activities);
-    //   console.log(editedActivity);
-    //   console.log(foundActivity);
-    //   const updatedActivity = {
-    //     ...foundActivity,
-    //     name,
-    //     points,
-    //     description,
-    //   };
-    //   const updatedActivities = activity.map((activity) =>
-    //     activity.id === id ? updatedActivity : activity
-    //   );
+    // const { id, name, points, description } = editedActivity;
 
-    //   setActivity(updatedActivities);
-    //   setUpdatedActivity(updatedActivity);
-    //   router.push(`/activity/${id}`);
+    // const foundActivity = activity.find((activity) => activity.id === id);
+    // if (!foundActivity) {
+    //   console.log(`Activity with id ${id} not found`);
+    //   return;
+    // }
+    // const updatedActivity = {
+    //   ...foundActivity,
+    //   name,
+    //   points,
+    //   description,
+    // };
+    // const updatedActivities = activity.map((activity) =>
+    //   activity.id === id ? updatedActivity : activity
+    // );
+
+    // setActivity(updatedActivities);
+    // setUpdatedActivity(updatedActivity);
+    // router.push(`/activity/${id}`);
     setActivityId(id);
-    console.log(activity);
+    console.log(handleEditActivity);
   }
 
   return (
@@ -57,6 +53,7 @@ export default function App({ Component, pageProps }) {
         handleDeleteActivity={handleDeleteActivity}
         handleEditActivity={handleEditActivity}
         activities={activity}
+        updatedActivity={updatedActivity}
       />
     </>
   );
