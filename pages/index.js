@@ -18,7 +18,7 @@ const FixedLink = styled(StyledLink)`
   background-image: linear-gradient(yellow, orange);
 `;
 
-export default function HomePage({ activities, handleDeleteActivity }) {
+export default function HomePage({ activities }) {
   return (
     <StyleMain>
       <Header>Adventure list</Header>
@@ -28,7 +28,7 @@ export default function HomePage({ activities, handleDeleteActivity }) {
           <StyleList key={activity.id}>
             <StyleBox>
               <li>
-                <Link href={`/activities/${activity.id}`}>{activity.name}</Link>
+                <Link href={`/${activity.id}`}>{activity.name}</Link>
               </li>
               <FixedLink href="/create">Add</FixedLink>
             </StyleBox>

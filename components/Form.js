@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { StyledButton } from "./StyledButton.js";
 import { Header } from "./StyledHeader.js";
+import { activities } from "@/lib/users/activities/activities.js";
 
 const FormContainer = styled.form`
   display: grid;
@@ -71,9 +72,10 @@ export default function Form({ onSubmit, defaultData }) {
       <Input
         id="points"
         name="points"
-        type="text"
+        type="number"
+        min={0}
+        max={100}
         placeholder="0 points"
-        defaultValue={defaultData?.points}
         required
       />
       <Label htmlFor="description">Activity description</Label>
