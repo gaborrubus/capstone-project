@@ -1,34 +1,51 @@
 import styled from "styled-components";
-import { Header } from "@/components/StyledHeader";
+import { FixedLink } from "./FixedLink";
 import { StyledButton } from "@/components/StyledButton";
 import { activities } from "@/lib/users/activities/activities";
+import { BackLink } from "./StyledBackLink";
+import { StyledLink } from "./StyledLink";
 
 const FormContainer = styled.form`
-  display: grid;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
   gap: 0.5rem;
-  background-color: beige;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-block-end: 4rem;
+  padding-block-start: 4rem;
 `;
 
 const Input = styled.input`
   padding: 0.5rem;
   font-size: inherit;
-  border: 3px solid black;
   border-radius: 0.5rem;
+  border: 3px solid lightblue;
 `;
 
 const Textarea = styled.textarea`
   font-family: inherit;
-  border: 3px solid black;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  border: 3px solid lightblue;
 `;
 
 const Label = styled.label`
   font-weight: bold;
-  background-color: beige;
+  background-color: white;
+  padding: 0.5rem;
 `;
 
-export default function FormActivityForEdit({ onSubmit, id }) {
+const FixedBackLink = styled(StyledLink)`
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+`;
+
+export default function FormActivityForEdit({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -38,19 +55,16 @@ export default function FormActivityForEdit({ onSubmit, id }) {
 
   return (
     <FormContainer onSubmit={handleSubmit}>
-      <Header>Edit activity</Header>
       <Label>Activity name </Label>
-      <Input name="name" required />
+      <Input name="name" type="text" required />
       <Label>Activity points </Label>
-      <Input name="points" min={0} max={100} required />
+      <Input name="points" type="numbers" min={0} max={100} required />
       <Label>Activity description </Label>
-      <Textarea name="description" cols="30" rows="10" />
+      <Textarea name="description" type="text" cols="30" rows="10" required />
       <StyledButton type="submit">Save</StyledButton>
+      <p>
+        <FixedBackLink href={`/allActivities`}>Back</FixedBackLink>
+      </p>
     </FormContainer>
   );
 }
-// initialValues={{
-//   name: activity.name,
-//   points: activity.points,
-//   description: activity.description,
-// }}

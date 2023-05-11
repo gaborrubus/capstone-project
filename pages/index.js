@@ -1,40 +1,16 @@
 import styled from "styled-components";
-import { Header } from "@/components/StyledHeader";
+import IntroPage from "@/components/IntroPage";
 import { StyleBox } from "@/components/StyledBox";
-import { StyleList } from "@/components/StyledList";
-import { StyledLink } from "@/components/StyledLink";
-import Link from "next/link";
+import { Header } from "@/components/StyledHeader";
 
-const StyleMain = styled.main`
-  background-color: beige;
-  justify-content: center;
-  align-items: center;
-`;
+// const StyleMain = styled.main`
+//   justify-content: center;
+//   align-content: column;
+//   min-height: 100vh;
+//   padding-block-end: 4rem;
+//   padding-block-start: 4rem;
+// `;
 
-const FixedLink = styled(StyledLink)`
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-image: linear-gradient(yellow, orange);
-`;
-
-export default function HomePage({ activities }) {
-  return (
-    <StyleMain>
-      <Header>Adventure list</Header>
-
-      {activities.map((activity) => {
-        return (
-          <StyleList key={activity.id}>
-            <StyleBox>
-              <li>
-                <Link href={`/${activity.id}`}>{activity.name}</Link>
-              </li>
-              <FixedLink href="/create">Add</FixedLink>
-            </StyleBox>
-          </StyleList>
-        );
-      })}
-    </StyleMain>
-  );
+export default function LandingPage() {
+  return <IntroPage />;
 }

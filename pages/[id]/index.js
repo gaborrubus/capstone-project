@@ -6,24 +6,36 @@ import { useRouter } from "next/router";
 import Card from "@/components/Card";
 import { DeleteButton } from "@/components/StyledDeleteButton";
 import { StyledLink } from "@/components/StyledLink";
-import { activities } from "@/lib/users/activities/activities";
 
 const StyleDetailMain = styled.main`
-  background-color: beige;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: white;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  padding-block-end: 4rem;
+  padding-block-start: 4rem;
 `;
 const FixedLink = styled(StyledLink)`
   margin: auto;
   width: 50%;
   text-align: center;
   padding: 10px;
-  border: 1px solid white;
   border-radius: 0.75rem;
-  background-image: linear-gradient(yellow, lightblue);
-  font-weight: bold;
+  background-color: white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 `;
 
+const FixedBackLink = styled(StyledLink)`
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+`;
 export default function DetailedPage({ activities, handleDeleteActivity }) {
   const router = useRouter();
   const id = router.query.id;
@@ -49,11 +61,19 @@ export default function DetailedPage({ activities, handleDeleteActivity }) {
             />
           </li>
         </StyleBox>
-        <FixedLink href={`/${activity.id}/edit`}>Edit</FixedLink>
 
-        <DeleteButton type="button" onClick={() => handleDeleteActivity(id)}>
-          Delete
-        </DeleteButton>
+        <span>
+          <FixedLink href={`/${activity.id}/edit`}>Edit</FixedLink>
+        </span>
+
+        <span>
+          <DeleteButton type="button" onClick={() => handleDeleteActivity(id)}>
+            Delete
+          </DeleteButton>
+        </span>
+        <span>
+          <FixedBackLink href={`/allActivities`}>Back</FixedBackLink>
+        </span>
       </StyleList>
     </StyleDetailMain>
   );

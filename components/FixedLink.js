@@ -1,12 +1,11 @@
+import Link from "next/link";
 import styled from "styled-components";
 
-export const DeleteButton = styled.div`
+export const FixedLink = styled(Link)`
   margin: auto;
-  width: 50%;
+  height: 50%;
   text-align: center;
   padding: 10px;
-  border: 1px solid white;
   border-radius: 0.75rem;
-  background-image: linear-gradient(orange, red);
   font-weight: bold;
 `;

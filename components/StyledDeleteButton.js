@@ -4,9 +4,9 @@ export const DeleteButton = styled.div`
   margin: auto;
   width: 50%;
   text-align: center;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 0.75rem;
-  background-image: linear-gradient(orange, red);
   font-weight: bold;
+  padding: 10px;
+  border-radius: 0.75rem;
+  background-color: tomato;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 `;

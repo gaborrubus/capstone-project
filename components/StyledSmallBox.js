@@ -5,8 +5,8 @@ export const Box = styled.div`
   width: 50%;
   text-align: center;
   padding: 10px;
-  border: 1px solid white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
-  background-image: linear-gradient(yellow, orange);
+  background-color: Khaki;
   font-weight: bold;
 `;

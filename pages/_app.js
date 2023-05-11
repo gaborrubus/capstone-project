@@ -3,6 +3,7 @@ import { activities } from "@/lib/users/activities/activities";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { uid } from "uid";
+// import IntroPage from "@/components/IntroPage";
 
 export default function App({ Component, pageProps }) {
   const [activity, setActivity] = useState(activities);
@@ -18,34 +19,32 @@ export default function App({ Component, pageProps }) {
     setActivity(activities.filter((x) => x.id !== idToRemove));
     router.push("/");
   }
+  function handleEditActivity(editedActivity, id) {
+    const { name, points, description } = editedActivity;
+    const foundActivity = activity.find((activity) => activity.id === id);
+    if (!foundActivity) {
+      console.log(`Activity with id ${id} not found`);
+      return;
+    }
+    const updatedActivity = {
+      ...foundActivity,
+      name,
+      points,
+      description,
+    };
+    const updatedActivities = activity.map((activity) =>
+      activity.id === id ? updatedActivity : activity
+    );
 
-  function handleEditActivity(id) {
-    // const { id, name, points, description } = editedActivity;
-
-    // const foundActivity = activity.find((activity) => activity.id === id);
-    // if (!foundActivity) {
-    //   console.log(`Activity with id ${id} not found`);
-    //   return;
-    // }
-    // const updatedActivity = {
-    //   ...foundActivity,
-    //   name,
-    //   points,
-    //   description,
-    // };
-    // const updatedActivities = activity.map((activity) =>
-    //   activity.id === id ? updatedActivity : activity
-    // );
-
-    // setActivity(updatedActivities);
-    // setUpdatedActivity(updatedActivity);
-    // router.push(`/activity/${id}`);
+    setActivity(updatedActivities);
+    setUpdatedActivity(updatedActivity);
+    router.push(`/${id}`);
     setActivityId(id);
-    console.log(handleEditActivity);
   }
 
   return (
     <>
+      {/* <IntroPage /> */}
       <GlobalStyle />
       <Component
         {...pageProps}
