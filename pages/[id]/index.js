@@ -36,6 +36,15 @@ const FixedBackLink = styled(StyledLink)`
   background-color: white;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 `;
+
+const FixedBackPlayLink = styled(StyledLink)`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+`;
+
 export default function DetailedPage({ activities, handleDeleteActivity }) {
   const router = useRouter();
   const id = router.query.id;
@@ -72,7 +81,10 @@ export default function DetailedPage({ activities, handleDeleteActivity }) {
           </DeleteButton>
         </span>
         <span>
-          <FixedBackLink href={`/allActivities`}>Back</FixedBackLink>
+          <FixedBackLink href={`/allActivities`}>Adventures</FixedBackLink>
+        </span>
+        <span>
+          <FixedBackPlayLink href={`/wheelPage`}>Play</FixedBackPlayLink>
         </span>
       </StyleList>
     </StyleDetailMain>

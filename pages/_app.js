@@ -13,11 +13,11 @@ export default function App({ Component, pageProps }) {
 
   function handleAddActivity(newActivity) {
     setActivity([...activity, { ...newActivity, id: uid() }]);
-    router.push("/");
+    router.push("/allActivities");
   }
   function handleDeleteActivity(idToRemove) {
     setActivity(activities.filter((x) => x.id !== idToRemove));
-    router.push("/");
+    router.push("/allActivities");
   }
   function handleEditActivity(editedActivity, id) {
     const { name, points, description } = editedActivity;

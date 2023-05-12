@@ -1,12 +1,9 @@
-import { StyleList } from "@/components/StyledList.js";
-import FormActivityForEdit from "@/components/FormEdit.js";
+import FormEdit from "@/components/FormEdit.js";
 import { useRouter } from "next/router";
 import { Header } from "@/components/StyledHeader";
 import { activities } from "@/lib/users/activities/activities";
-import { StyleBox } from "@/components/StyledBox";
 import styled from "styled-components";
 import { StyledLink } from "@/components/StyledLink";
-import { BackLink } from "@/components/StyledBackLink";
 
 const StyleDetailMain = styled.main`
   display: flex;
@@ -40,7 +37,7 @@ export default function EditActionItemPage({ handleEditActivity }) {
   return (
     <>
       <Header>Edit Adventure</Header>
-      <FormActivityForEdit
+      <FormEdit
         onSubmit={(editedActivity) =>
           handleEditActivity(editedActivity, id, activity)
         }

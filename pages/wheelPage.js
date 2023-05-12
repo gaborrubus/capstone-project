@@ -92,11 +92,7 @@ function Wheel() {
         {spin ? "Spinning..." : "Spin the wheel!"}
       </PlayButton>
       <StyleBox>
-        {selectedActivity && (
-          <p>
-            Your next Adventure is: <p>{selectedActivity.name} </p>
-          </p>
-        )}
+        {selectedActivity && <p>Your next Adventure is:</p>}
         <BoxLink href={`/${selectedActivity?.id}`}>
           {selectedActivity?.name}
         </BoxLink>
