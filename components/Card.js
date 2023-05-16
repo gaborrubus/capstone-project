@@ -4,25 +4,22 @@ import { StyledImage } from "./StyledImage.js";
 import { Box } from "./StyledSmallBox.js";
 
 const Article = styled.article`
-  border: 3px solid purple;
   border-radius: 0.8rem;
   padding: 1rem;
   margin: 1rem;
   padding: 1rem;
-  width: screen;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   height: 10rem;
-  width: screen;
   margin: 0rem;
   padding: 1rem;
 `;
 
 const Figure = styled.figure`
   position: relative;
-  width: screen;
+  width: 100%;
   margin: 0rem;
   padding: 0.5rem;
 `;

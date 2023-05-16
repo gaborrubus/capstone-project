@@ -4,9 +4,11 @@ export const StyleBox = styled.div`
   color: black;
   font-weight: bold;
   font-size: large;
-  border: solid purple;
   border-radius: 10px;
   padding: 10px;
-  width: screen;
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
+  background: lightcyan;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 `;
