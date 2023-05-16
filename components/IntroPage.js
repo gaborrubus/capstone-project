@@ -64,12 +64,9 @@ function IntroPage() {
         />
       </ImageContainer>
 
-      <PlayLink href={`/wheelPage`}>
-        Play
-        {/* <StyledImage src="/play-button.png" height="40" width="40" alt="" /> */}
-      </PlayLink>
+      <PlayLink href={`/wheelPage`}>Play</PlayLink>
 
-      <SettingsLink href={`/allActivities`}>
+      <SettingsLink href={`/allActivities`} aria-label="All Activities">
         <StyledImage src="/sign.png" height="60" width="60" alt="" />
       </SettingsLink>
     </div>

@@ -3,7 +3,6 @@ import { activities } from "@/lib/users/activities/activities";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { uid } from "uid";
-// import IntroPage from "@/components/IntroPage";
 
 export default function App({ Component, pageProps }) {
   const [activity, setActivity] = useState(activities);
@@ -44,7 +43,6 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {/* <IntroPage /> */}
       <GlobalStyle />
       <Component
         {...pageProps}

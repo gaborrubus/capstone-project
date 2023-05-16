@@ -14,8 +14,7 @@ const FormContainer = styled.form`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-block-end: 4rem;
-  padding-block-start: 4rem;
+  padding-block: 4rem;
 `;
 
 const Input = styled.input`
