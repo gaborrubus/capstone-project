@@ -63,21 +63,9 @@ function Wheel() {
     setSelectedActivity(null);
     setSpin(true);
   };
-  const renderPrize = (activity, index) => {
-    const activityStyle = {
-      transform: `rotate(${(360 / activities.length) * index}deg)`,
-      backgroundColor: index % 2 === 0 ? "#C1E1C1" : "#87CEFA",
-    };
 
-    const spinWheel = () => {
-      const randomIndex = Math.floor(Math.random() * activities.length);
-      setSelectedActivity(activities[randomIndex]);
-    };
-  };
   return (
     <div>
-      <div>{activities.map((activity, id) => renderPrize(activity, id))}</div>
-
       <ImageContainer>
         <StyledImage
           src="/wheel-of-fortune.png"
