@@ -30,6 +30,23 @@ const PlayButton = styled.button`
   left: 50%;
   transform: translateX(-50%);
 `;
+const SpinnerOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+`;
+
+const SpinnerText = styled.p`
+  color: white;
+  font-size: 40px;
+`;
 const BoxLink = styled(Link)`
   text-decoration: none;
   color: black;
@@ -76,9 +93,24 @@ function Wheel() {
           alt=""
         />
       </ImageContainer>
+
       <PlayButton onClick={handleSpinClick} disabled={spin}>
         {spin ? "Spinning..." : "Spin the wheel!"}
       </PlayButton>
+      {spin && (
+        <SpinnerOverlay>
+          <SpinnerText>
+            <StyledImage
+              src="/wheel-of-fortune.png"
+              width="51"
+              height="51"
+              alt=""
+            />
+            Spinning...
+          </SpinnerText>
+        </SpinnerOverlay>
+      )}
+
       <StyleBox>
         {selectedActivity && <p>Your next Adventure is:</p>}
         <BoxLink href={`/${selectedActivity?.id}`}>
